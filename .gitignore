@@ -26,6 +26,8 @@ frontend/dist/
 frontend/build/
 dist/
 build/
+.wrangler/
+frontend/.wrangler/
 
 # Editor & System Files
 .vscode/

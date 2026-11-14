@@ -66,10 +66,9 @@ This guide details how to deploy the **BBA Career Hub** application:
 5. Add **Environment Variables**:
    - `VITE_API_BASE_URL`: `https://bba-career-hub-backend.onrender.com/api`
 6. Single Page Application Routing (SPA):
-   - In `frontend/public/_redirects`, ensure this rule exists:
-     ```
-     /*  /index.html  200
-     ```
+   - Cloudflare Pages and Cloudflare Workers Static Assets natively support Single Page Applications without needing a `_redirects` file.
+   - Any unmatched client-side route automatically serves `index.html` with a 200 OK status.
+   *(Note: Do **not** create a `/* /index.html 200` rule in `_redirects`, as Cloudflare's asset engine will flag it with Error 100324: Infinite loop detected).*
 7. Click **Save and Deploy**. Cloudflare Pages will build and deploy your React Vite app.
 
 ---
